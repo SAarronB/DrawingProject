@@ -11,8 +11,46 @@ import UIKit
 private let reuseIdentifier = "ArtIdentifier"
 
 public class ArtCollectionViewController: UICollectionViewController {
-
-   public override func viewDidLoad() {
+    
+    //MARK: Data memebers for Creativity Screen
+    
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private let itemsPerRowCompact: CGFloat = 4
+    private let itemsPerRowNormal: CGFloat = 6
+    
+    private let creativeCS: [UIImage?] =
+    {
+        return[
+            UIImage(named: "HaikuJava"),
+            UIImage(named: "MACHU-PERU"),
+            UIImage(named: "MainframeImg"),
+            UIImage(named: "mlgsetup"),
+            UIImage(named: "octocat"),
+            UIImage(named: "Screen Shot 2018-11-07 at 7.59.00 AM"),
+            UIImage(named: "servercabling"),
+            UIImage(named: "SwiftHaikuFile")
+        ]
+    }()
+    
+    private let labels : [String] =
+    {
+        return [
+             "JavaHiku",
+            "Peru",
+            "ServerHiku",
+            "Desk",
+            "Octocat",
+            "App",
+            "Cabling",
+            "Swift"
+        ]
+    }()
+    
+    //MARK: Navigation
+    
+    
+   public override func -> Void
+{
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
