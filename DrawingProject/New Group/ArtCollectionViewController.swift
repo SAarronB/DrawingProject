@@ -33,13 +33,13 @@ public class ArtCollectionViewController: UICollectionViewController {
         ]
     }()
     
-    private let labels : [String] =
+    private let Labels : [String] =
     {
         return [
              "JavaHiku",
             "Peru",
             "ServerHiku",
-            "Desk",
+            "DeskImg",
             "Octocat",
             "App",
             "Cabling",
@@ -52,7 +52,7 @@ public class ArtCollectionViewController: UICollectionViewController {
     
     
     public override func viewDidLoad() -> Void
-{
+    {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -85,14 +85,14 @@ public class ArtCollectionViewController: UICollectionViewController {
     }
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let ArtCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtCell
     
         ArtCell.backgroundColor = .purple
         ArtCell.artImage.image = creativeCS[indexPath.row]
-        ArtCell.artlabel.text = label[indexPath.row]
+        ArtCell.artLabel.text = Labels[indexPath.row]
         // Configure the cell
     
-        return cell
+        return ArtCell
     }
 
     // MARK: UICollectionViewDelegate
@@ -107,26 +107,23 @@ public class ArtCollectionViewController: UICollectionViewController {
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
 
-    /*
     // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> UIEdgeInsets {
+        
+        return sectionInsets
     }
-    */
-
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+    public func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> CGFloat {
+        return sectionInsets.left
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return false
     }
 
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    public func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
     }
     */
-
 }
