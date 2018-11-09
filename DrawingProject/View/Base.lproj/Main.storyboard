@@ -84,6 +84,9 @@
                                     <constraint firstItem="ix8-o0-82A" firstAttribute="centerX" secondItem="E4Y-A8-A0H" secondAttribute="centerX" id="kg5-0D-ONn"/>
                                     <constraint firstItem="ix8-o0-82A" firstAttribute="centerY" secondItem="E4Y-A8-A0H" secondAttribute="centerY" id="kj0-mQ-wIV"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="artImage" destination="ix8-o0-82A" id="Tpm-zF-9e0"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

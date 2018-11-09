@@ -28,7 +28,8 @@ public class ArtCollectionViewController: UICollectionViewController {
             UIImage(named: "octocat"),
             UIImage(named: "Screen Shot 2018-11-07 at 7.59.00 AM"),
             UIImage(named: "servercabling"),
-            UIImage(named: "SwiftHaikuFile")
+            UIImage(named: "SwiftHaikuFile"),
+            UIImage(named: "THEPIC")
         ]
     }()
     
@@ -42,22 +43,20 @@ public class ArtCollectionViewController: UICollectionViewController {
             "Octocat",
             "App",
             "Cabling",
-            "Swift"
+            "Swift",
+            "THEPIC"
         ]
     }()
     
     //MARK: Navigation
     
     
-   public override func -> Void
+    public override func viewDidLoad() -> Void
 {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -88,6 +87,9 @@ public class ArtCollectionViewController: UICollectionViewController {
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
+        ArtCell.backgroundColor = .purple
+        ArtCell.artImage.image = creativeCS[indexPath.row]
+        ArtCell.artlabel.text = label[indexPath.row]
         // Configure the cell
     
         return cell
